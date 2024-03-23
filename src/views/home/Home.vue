@@ -104,18 +104,18 @@ export default {
             name: 'Lodash',
             desc: 'Lodash 中文文档',
             icon: 'https://www.lodashjs.com/img/favicon.ico',
-            website: 'https://cn.vuejs.org/'
+            website: 'https://www.lodashjs.com/'
           },
           {
             name: 'Vue',
             desc: 'Vue 文档',
-            icon: '',
-            website: 'https://www.lodashjs.com/'
+            icon: 'https://cn.vuejs.org/logo.svg',
+            website: 'https://cn.vuejs.org/'
           },
           {
             name: 'Vuex',
             desc: 'Vue.js的状态管理模式 + 库',
-            icon: '',
+            icon: 'https://cn.vuejs.org/logo.svg',
             website: 'https://vuex.vuejs.org/zh/index.html'
           },
           {
