@@ -81,6 +81,12 @@ export default [
         desc: 'Nodejs v16.x 文档',
         icon: 'https://nodejs.org/static/images/favicons/favicon.png',
         website: 'https://nodejs.org/docs/latest-v16.x/api/index.html'
+      },
+      {
+        name: 'npm',
+        desc: 'npm',
+        icon: 'https://static-production.npmjs.com/34110fd7686e2c90a487ca98e7336e99.png',
+        website: 'https://www.npmjs.com/'
       }
     ]
   }
