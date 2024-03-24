@@ -37,14 +37,11 @@
             <WebsiteList :WebsiteList="item"></WebsiteList>
           </div>
         </a-layout-content>
-        <a-layout-footer
-          >V{{ version }} @
-          <a
-            href="https://github.com/ZzzzzzzzHong/mytab.github.io"
-            target="_brank"
-          >
-            Hong
-          </a>
+        <a-layout-footer>
+          Author @Hong
+          <a href="https://github.com/ZzzzzzzzHong" target="_brank"> github </a>
+          |
+          <a href="https://gitee.com/ZzzzHong" target="_brank">gitee</a>
         </a-layout-footer>
       </a-layout>
     </a-layout>
@@ -57,7 +54,6 @@ import dayjs from 'dayjs'
 import { message } from 'ant-design-vue'
 import WebsiteList from './chlidren/WebsiteList.vue'
 import customList from '@/config/websiteConfig'
-import config from '../../../package.json'
 
 export default {
   components: { WebsiteList },
@@ -108,17 +104,13 @@ export default {
       }
     }
 
-    // -- footer --
-    const version = config.version
-
     return {
       time,
       week,
       openMessage,
       formData,
       onSearch,
-      customList,
-      version
+      customList
     }
   }
 }
