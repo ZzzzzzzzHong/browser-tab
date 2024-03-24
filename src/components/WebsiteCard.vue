@@ -69,6 +69,7 @@ export default {
       &.gen-title {
         margin-bottom: 4px;
         font-size: 14px;
+        font-weight: 600;
       }
     }
   }
