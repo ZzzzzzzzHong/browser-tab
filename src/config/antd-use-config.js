@@ -1,7 +1,7 @@
 // 按需引入antd组件
-import { Button, Card, Form, Input, Radio } from 'ant-design-vue'
+import { Button, Card, Form, Input, Layout, Radio } from 'ant-design-vue'
 
-const components = [Button, Card, Form, Input, Radio]
+const components = [Button, Card, Form, Input, Layout, Radio]
 
 export default function (app) {
   components.forEach(component => {

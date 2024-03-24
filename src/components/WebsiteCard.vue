@@ -51,6 +51,7 @@ export default {
   text-align: left;
   cursor: pointer;
   background: #ecf0f1;
+  box-sizing: initial;
   &:hover {
     box-shadow: 0 0 6px 2px #cccccc;
   }
@@ -68,6 +69,7 @@ export default {
       &.gen-title {
         margin-bottom: 4px;
         font-size: 14px;
+        font-weight: 600;
       }
     }
   }
