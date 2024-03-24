@@ -16,12 +16,11 @@
 </template>
 
 <script>
-import { TagsOutlined } from '@ant-design/icons-vue'
 import WebsiteCard from '@/components/WebsiteCard.vue'
 
 export default {
   name: 'WebsiteList',
-  components: { WebsiteCard, TagsOutlined },
+  components: { WebsiteCard },
   props: {
     WebsiteList: {
       type: Object,
@@ -41,8 +40,7 @@ export default {
       }
     }
   },
-  setup(a, b) {
-    console.log(a, b)
+  setup() {
     return {}
   }
 }
