@@ -50,10 +50,11 @@ export default {
   border-radius: 2px;
   text-align: left;
   cursor: pointer;
-  background: #ecf0f1;
+  background: @bg-color-card;
+  border: 1px solid @border-color-card;
   box-sizing: initial;
   &:hover {
-    box-shadow: 0 0 6px 2px #cccccc;
+    box-shadow: @box-shadow-card;
   }
   img {
     width: 28px;

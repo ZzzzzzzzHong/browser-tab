@@ -1,6 +1,16 @@
-import { SettingOutlined, TagsOutlined } from '@ant-design/icons-vue'
+import {
+  GithubOutlined,
+  SettingOutlined,
+  SearchOutlined,
+  TagsOutlined
+} from '@ant-design/icons-vue'
 
-const iconComponents = { SettingOutlined, TagsOutlined }
+const iconComponents = {
+  GithubOutlined,
+  SettingOutlined,
+  SearchOutlined,
+  TagsOutlined
+}
 
 export default function (app) {
   Object.keys(iconComponents).forEach(iconName => {
