@@ -2,9 +2,9 @@
   <div class="layout-header">
     <p class="time">{{ time }} {{ week }}</p>
     <div class="control">
-      <a-switch :checked="isDark">
-        <template #checkedChildren> 亮 </template>
-        <template #unCheckedChildren> 暗 </template>
+      <a-switch v-model:checked="isDark">
+        <template #checkedChildren> 🌙 </template>
+        <template #unCheckedChildren> ☀ </template>
       </a-switch>
       <SettingOutlined @click="openMessage" />
     </div>
@@ -12,7 +12,8 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
+import { useStore } from 'vuex'
 import dayjs from 'dayjs'
 import { message } from 'ant-design-vue'
 
@@ -36,10 +37,14 @@ export default {
       time.value = dayjs().format('YYYY-MM-DD HH:mm:ss')
     }, 1000)
 
-    // todo: 读取vuex的state值作为开关值，触发开关commit方法，修改state，存入浏览器本地缓存，注意模块划分
-    const isDark = ref(false)
+    const store = useStore()
+    const isDark = ref(store.getters['app/isDark'])
+    watch(isDark, newV => {
+      store.commit('app/SET_THEME', newV ? 'dark' : 'light')
+    })
+
     const openMessage = () => {
-      message.info('前面的区域，以后再来吧')
+      message.info({ key: 'info', content: '前面的区域，以后再来吧' })
     }
 
     return {
@@ -53,21 +58,25 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import '../../style/variable.less';
+
 .layout-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
-  background-color: rgb(170, 187, 204);
+  padding: 0 @padding-y;
+  background-color: @bg-color-header;
+  color: @text-color-main;
+  border-bottom: 1px solid @border-color;
   .time {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
   }
   .control {
     display: flex;
     align-items: center;
     > span {
-      font-size: 24px;
+      font-size: 20px;
       margin-left: 16px;
       cursor: pointer;
     }

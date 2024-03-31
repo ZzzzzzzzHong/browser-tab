@@ -26,11 +26,18 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import '../../style/variable.less';
+
 .layout {
   height: 100vh;
   overflow-y: auto;
+  background-color: @bg-color-content;
   .ant-layout {
     height: 100%;
+    .ant-layout-header {
+      height: 55px;
+      line-height: 55px;
+    }
   }
 }
 </style>

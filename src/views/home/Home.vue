@@ -2,15 +2,15 @@
   <div class="home">
     <a-form :model="formData" class="gen-form search-form">
       <a-form-item name="name">
-        <a-input-search
+        <a-input
           v-model:value="formData.searchKay"
           placeholder=""
           allowClear
-          enter-button="嗖一下🚀"
           size="large"
           autocomplete="off"
-          @search="onSearch"
-        />
+        >
+          <template #prefix><SearchOutlined @click="onSearch" /></template>
+        </a-input>
       </a-form-item>
       <a-form-item name="searchEngine">
         <a-radio-group v-model:value="formData.searchEngine">
@@ -71,10 +71,15 @@ export default {
 
 .home {
   text-align: center;
-  color: @mainColor;
+  color: @text-color-main;
+  margin-top: 32px;
   .search-form {
     margin: 0 auto;
     width: 600px;
+    .ant-input-affix-wrapper {
+      border-radius: 4px;
+      line-height: 1.6;
+    }
   }
   .custom-list {
     margin-bottom: 32px;

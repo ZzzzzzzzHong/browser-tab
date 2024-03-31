@@ -1,6 +1,6 @@
 <template>
   <div class="layout-footer">
-    Author @Hong
+    链接 @Hong
     <a href="https://github.com/ZzzzzzzzHong" target="_brank"> github </a>
     |
     <a href="https://gitee.com/ZzzzHong" target="_brank">gitee</a>
@@ -14,7 +14,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import '../../style/variable.less';
+
 .layout-footer {
+  height: 100%;
   text-align: center;
+  background-color: @bg-color-footer;
+  border-top: 1px solid @border-color;
+  color: @text-color-main;
+  line-height: 48px;
 }
 </style>
