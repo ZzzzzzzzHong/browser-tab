@@ -44,7 +44,7 @@ export default {
     })
 
     const openMessage = () => {
-      message.info({ key: 'info', content: '前面的区域，以后再来吧' })
+      message.info({ key: 'info', content: '前方的区域以后再来探索吧' })
     }
 
     return {
