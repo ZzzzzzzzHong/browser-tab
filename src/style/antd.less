@@ -1,4 +1,6 @@
-// layout
+@import './variable.less';
+
+// Layout 布局
 .ant-layout {
   background-color: transparent;
   .ant-layout-header {
@@ -11,5 +13,41 @@
   .ant-layout-footer {
     background-color: transparent;
     padding: 0px;
+  }
+}
+
+// Radio 单选框
+.ant-radio-group {
+  .ant-radio-wrapper {
+    > span {
+      color: @text-color-main;
+    }
+  }
+}
+
+// Message 全局提示
+.ant-message {
+  > div {
+    color: @text-color-main;
+    .ant-message-notice-content {
+      border: 1px solid @border-color;
+      background: @bg-color-header;
+    }
+  }
+}
+
+// Input 输入框
+.ant-form-item-control-input {
+  .ant-form-item-control-input-content {
+    .ant-input-affix-wrapper {
+      background: @bg-color-content;
+      color: @text-color-main;
+      border-color: @border-color;
+      // box-shadow: 0 0 0 1px red inset;
+      .ant-input {
+        color: @text-color-main;
+        background: @bg-color-content;
+      }
+    }
   }
 }
