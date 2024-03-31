@@ -14,5 +14,6 @@ export default {
 .layout-content {
   box-sizing: border-box;
   padding: 32px;
+  user-select: none;
 }
 </style>
