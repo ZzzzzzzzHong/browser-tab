@@ -8,6 +8,7 @@
           allowClear
           size="large"
           autocomplete="off"
+          @keyup.enter="onSearch"
         >
           <template #prefix><SearchOutlined @click="onSearch" /></template>
         </a-input>

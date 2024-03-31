@@ -43,10 +43,18 @@
       background: @bg-color-content;
       color: @text-color-main;
       border-color: @border-color;
-      // box-shadow: 0 0 0 1px red inset;
+      .ant-input-prefix {
+        color: @text-color-secondary;
+      }
       .ant-input {
         color: @text-color-main;
         background: @bg-color-content;
+      }
+      .ant-input-suffix {
+        .ant-input-clear-icon {
+          color: @text-color-main;
+          opacity: 0.5;
+        }
       }
     }
   }
