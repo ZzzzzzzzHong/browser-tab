@@ -6,10 +6,11 @@ import {
   Input,
   Layout,
   Radio,
+  Result,
   Switch
 } from 'ant-design-vue'
 
-const components = [Button, Card, Form, Input, Layout, Radio, Switch]
+const components = [Button, Card, Form, Input, Layout, Radio, Result, Switch]
 
 export default function (app) {
   components.forEach(component => {

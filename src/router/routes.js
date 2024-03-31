@@ -19,6 +19,20 @@ const routes = [
           import(/* webpackChunkName: "home" */ '../views/home/Home.vue')
       }
     ]
+  },
+  // 404
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: BaseLayout,
+    redirect: '/index/404',
+    children: [
+      {
+        path: '404',
+        component: () =>
+          import(/* webpackChunkName: "notfound" */ '../views/NotFound.vue')
+      }
+    ]
   }
 ]
 
