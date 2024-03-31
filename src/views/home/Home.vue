@@ -71,7 +71,7 @@ export default {
 
 .home {
   text-align: center;
-  color: @light-text-mainColor;
+  color: @mainColor;
   .search-form {
     margin: 0 auto;
     width: 600px;
