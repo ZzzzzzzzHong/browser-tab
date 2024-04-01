@@ -71,3 +71,32 @@
     font-size: inherit;
   }
 }
+
+// Drawer 抽屉
+.ant-drawer {
+  .ant-drawer-content-wrapper {
+    .ant-drawer-content {
+      background: @bg-color-content;
+      color: @text-color-secondary;
+      .ant-drawer-header {
+        border-bottom: 1px solid @border-color;
+        padding: 16px;
+        .ant-drawer-header-title {
+          .ant-drawer-close {
+            color: @text-color-main;
+            opacity: 0.5;
+          }
+          .ant-drawer-title {
+            color: @text-color-main;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Button 按钮
+.ant-btn {
+  border-radius: 4px;
+}
