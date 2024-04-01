@@ -1,6 +1,10 @@
+import websiteConfig from '@/config/websiteConfig'
+
 // state：放数据的地方
 const state = {
-  theme: localStorage.getItem('THEME') || 'light' // light or dark
+  theme: localStorage.getItem('THEME') || 'light', // light or dark
+  websiteData:
+    JSON.parse(localStorage.getItem('WEBSITECONFIG')) || websiteConfig
 }
 
 // getters：理解为计算属性,用于简化仓库数据,让组件获取仓库的数据更加方便
@@ -14,6 +18,11 @@ const mutations = {
     state.theme = payload
     localStorage.setItem('THEME', payload)
     document.documentElement.setAttribute('data-theme', payload)
+  },
+  SET_WEBSITECONFIG: (state, payload) => {
+    state.websiteData = JSON.parse(payload)
+    localStorage.setItem('WEBSITECONFIG', payload)
+    console.log('修改配置信息了')
   }
 }
 
