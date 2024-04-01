@@ -1,4 +1,5 @@
 import {
+  DownloadOutlined,
   GithubOutlined,
   SettingOutlined,
   SearchOutlined,
@@ -6,6 +7,7 @@ import {
 } from '@ant-design/icons-vue'
 
 const iconComponents = {
+  DownloadOutlined,
   GithubOutlined,
   SettingOutlined,
   SearchOutlined,
