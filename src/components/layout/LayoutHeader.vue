@@ -1,6 +1,6 @@
 <template>
   <div class="layout-header">
-    <p class="time">{{ time }} {{ week }}</p>
+    <p class="time">{{ timeClock }}</p>
     <div class="control">
       <a-switch v-model:checked="isDark">
         <template #checkedChildren> 🌙 </template>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { computed, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 import { useStore } from 'vuex'
 import dayjs from 'dayjs'
 import { message } from 'ant-design-vue'
@@ -29,12 +29,14 @@ export default {
       '星期五',
       '星期六'
     ]
-    const week = computed(() => weekArr[dayjs().format('d')])
-
     // 当前时间
-    let time = ref(dayjs().format('YYYY-MM-DD HH:mm:ss'))
+    let timeClock = ref(
+      dayjs().format('YYYY-MM-DD HH:mm:ss') + ' ' + weekArr[dayjs().format('d')]
+    )
     setInterval(() => {
-      time.value = dayjs().format('YYYY-MM-DD HH:mm:ss')
+      timeClock.value = ` ${dayjs().format('YYYY-MM-DD HH:mm:ss')} ${
+        weekArr[dayjs().format('d')]
+      }`
     }, 1000)
 
     const store = useStore()
@@ -48,8 +50,7 @@ export default {
     }
 
     return {
-      week,
-      time,
+      timeClock,
       isDark,
       openMessage
     }
