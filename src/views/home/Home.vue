@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { ref, reactive } from 'vue'
+import { reactive, computed } from 'vue'
 import { useStore } from 'vuex'
 import WebsiteList from './chlidren/WebsiteList.vue'
 
@@ -59,7 +59,7 @@ export default {
     }
 
     const store = useStore()
-    const customList = ref(store.state.app.websiteData)
+    const customList = computed(() => store.state.app.websiteData)
 
     return {
       formData,

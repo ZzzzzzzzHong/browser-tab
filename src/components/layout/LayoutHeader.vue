@@ -1,13 +1,16 @@
 <template>
   <div class="layout-header">
-    <p class="time">{{ timeClock }}</p>
-    <div class="control">
-      <a-switch v-model:checked="isDark">
-        <template #checkedChildren> 🌙 </template>
-        <template #unCheckedChildren> ☀ </template>
-      </a-switch>
-      <SettingOutlined @click="openMessage" />
+    <div class="header">
+      <p class="time">{{ timeClock }}</p>
+      <div class="control">
+        <a-switch v-model:checked="isDark">
+          <template #checkedChildren> 🌙 </template>
+          <template #unCheckedChildren> ☀ </template>
+        </a-switch>
+        <SettingOutlined @click="drawer.init()" />
+      </div>
     </div>
+    <HeaderDrawer ref="drawer"></HeaderDrawer>
   </div>
 </template>
 
@@ -15,11 +18,14 @@
 import { ref, watch } from 'vue'
 import { useStore } from 'vuex'
 import dayjs from 'dayjs'
-import { message } from 'ant-design-vue'
+import HeaderDrawer from './HeaderDrawer.vue'
 
 export default {
+  components: { HeaderDrawer },
   name: 'LayoutHeader',
   setup() {
+    const drawer = ref()
+
     const weekArr = [
       '星期日',
       '星期一',
@@ -45,14 +51,10 @@ export default {
       store.commit('app/SET_THEME', newV ? 'dark' : 'light')
     })
 
-    const openMessage = () => {
-      message.info({ key: 'info', content: '前方的区域以后再来探索吧' })
-    }
-
     return {
+      drawer,
       timeClock,
-      isDark,
-      openMessage
+      isDark
     }
   }
 }
@@ -62,24 +64,28 @@ export default {
 @import '../../style/variable.less';
 
 .layout-header {
-  display: flex;
-  justify-content: space-between;
+  height: @header-height;
+  line-height: @header-height;
   align-items: center;
   padding: 0 @padding-y;
   background-color: @bg-color-header;
   color: @text-color-main;
   border-bottom: 1px solid @border-color;
-  .time {
-    font-size: 18px;
-    font-weight: 400;
-  }
-  .control {
+  .header {
     display: flex;
-    align-items: center;
-    > span {
-      font-size: 20px;
-      margin-left: 16px;
-      cursor: pointer;
+    justify-content: space-between;
+    .time {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .control {
+      display: flex;
+      align-items: center;
+      > span {
+        font-size: 20px;
+        margin-left: 16px;
+        cursor: pointer;
+      }
     }
   }
 }

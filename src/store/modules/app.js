@@ -1,3 +1,4 @@
+import { message } from 'ant-design-vue'
 import websiteConfig from '@/config/websiteConfig'
 
 // state：放数据的地方
@@ -20,9 +21,14 @@ const mutations = {
     document.documentElement.setAttribute('data-theme', payload)
   },
   SET_WEBSITECONFIG: (state, payload) => {
-    state.websiteData = JSON.parse(payload)
-    localStorage.setItem('WEBSITECONFIG', payload)
-    console.log('修改配置信息了')
+    try {
+      state.websiteData = JSON.parse(payload)
+      localStorage.setItem('WEBSITECONFIG', payload)
+      message.success({ content: '配置设置成功!', key: 'success' })
+    } catch (e) {
+      message.error({ content: 'JSON格式有误!', key: 'error' })
+      console.error(e)
+    }
   }
 }
 
