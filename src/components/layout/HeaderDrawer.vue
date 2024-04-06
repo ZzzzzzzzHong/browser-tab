@@ -51,7 +51,7 @@ export default {
     const store = useStore()
     let drawerContainer = ref()
 
-    let drawerShow = ref(true)
+    let drawerShow = ref(false)
     const init = () => {
       drawerShow.value = true
     }
