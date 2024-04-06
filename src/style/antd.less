@@ -109,13 +109,17 @@
 // Upload 上传
 .ant-upload-wrapper {
   .ant-upload {
-    .ant-upload-text {
-      color: @text-color-main !important;
-    }
+    .ant-upload-text,
     .ant-upload-drag-icon,
     .ant-upload-drag-icon .anticon,
     .ant-upload-hint {
       color: @text-color-secondary !important;
+    }
+    .ant-upload-text {
+      font-size: 14px !important;
+    }
+    .ant-upload-hint {
+      font-size: 12px !important;
     }
   }
   .ant-upload-list {
