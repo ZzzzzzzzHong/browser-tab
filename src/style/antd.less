@@ -109,12 +109,26 @@
 // Upload 上传
 .ant-upload-wrapper {
   .ant-upload {
-    .ant-upload-drag-icon,
     .ant-upload-text {
       color: @text-color-main !important;
     }
+    .ant-upload-drag-icon,
+    .ant-upload-drag-icon .anticon,
     .ant-upload-hint {
       color: @text-color-secondary !important;
+    }
+  }
+  .ant-upload-list {
+    .ant-upload-list-item {
+      color: @text-color-secondary;
+      .ant-upload-list-item-actions {
+        .anticon {
+          color: @text-color-secondary;
+        }
+        &:hover .anticon {
+          color: @text-color-main;
+        }
+      }
     }
   }
 }

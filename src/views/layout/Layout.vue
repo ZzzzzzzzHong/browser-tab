@@ -34,10 +34,6 @@ export default {
   background-color: @bg-color-content;
   .ant-layout {
     height: 100%;
-    .ant-layout-header {
-      height: 55px;
-      line-height: 55px;
-    }
   }
 }
 </style>
