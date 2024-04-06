@@ -8,7 +8,8 @@ import {
   Layout,
   Radio,
   Result,
-  Switch
+  Switch,
+  Upload
 } from 'ant-design-vue'
 
 const components = [
@@ -20,7 +21,8 @@ const components = [
   Layout,
   Radio,
   Result,
-  Switch
+  Switch,
+  Upload
 ]
 
 export default function (app) {

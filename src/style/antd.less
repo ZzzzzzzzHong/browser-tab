@@ -1,4 +1,5 @@
 @import './variable.less';
+@import './gen.less';
 
 // Layout 布局
 .ant-layout {
@@ -74,6 +75,7 @@
 
 // Drawer 抽屉
 .ant-drawer {
+  .gen-scroll();
   .ant-drawer-content-wrapper {
     .ant-drawer-content {
       background: @bg-color-content;
@@ -92,6 +94,9 @@
           }
         }
       }
+      .ant-drawer-body {
+        padding: 16px;
+      }
     }
   }
 }
@@ -99,4 +104,17 @@
 // Button 按钮
 .ant-btn {
   border-radius: 4px;
+}
+
+// Upload 上传
+.ant-upload-wrapper {
+  .ant-upload {
+    .ant-upload-drag-icon,
+    .ant-upload-text {
+      color: @text-color-main !important;
+    }
+    .ant-upload-hint {
+      color: @text-color-secondary !important;
+    }
+  }
 }
