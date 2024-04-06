@@ -1,15 +1,21 @@
 import {
+  DownloadOutlined,
   GithubOutlined,
+  SaveOutlined,
   SettingOutlined,
   SearchOutlined,
-  TagsOutlined
+  TagsOutlined,
+  UploadOutlined
 } from '@ant-design/icons-vue'
 
 const iconComponents = {
+  DownloadOutlined,
   GithubOutlined,
+  SaveOutlined,
   SettingOutlined,
   SearchOutlined,
-  TagsOutlined
+  TagsOutlined,
+  UploadOutlined
 }
 
 export default function (app) {

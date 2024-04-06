@@ -1,4 +1,5 @@
 @import './variable.less';
+@import './gen.less';
 
 // Layout 布局
 .ant-layout {
@@ -69,5 +70,69 @@
   .ant-result-subtitle {
     color: @text-color-secondary;
     font-size: inherit;
+  }
+}
+
+// Drawer 抽屉
+.ant-drawer {
+  .gen-scroll();
+  .ant-drawer-content-wrapper {
+    .ant-drawer-content {
+      background: @bg-color-content;
+      color: @text-color-secondary;
+      .ant-drawer-header {
+        border-bottom: 1px solid @border-color;
+        padding: 16px;
+        .ant-drawer-header-title {
+          .ant-drawer-close {
+            color: @text-color-main;
+            opacity: 0.5;
+          }
+          .ant-drawer-title {
+            color: @text-color-main;
+            font-weight: normal;
+          }
+        }
+      }
+      .ant-drawer-body {
+        padding: 16px;
+      }
+    }
+  }
+}
+
+// Button 按钮
+.ant-btn {
+  border-radius: 4px;
+}
+
+// Upload 上传
+.ant-upload-wrapper {
+  .ant-upload {
+    .ant-upload-text,
+    .ant-upload-drag-icon,
+    .ant-upload-drag-icon .anticon,
+    .ant-upload-hint {
+      color: @text-color-secondary !important;
+    }
+    .ant-upload-text {
+      font-size: 14px !important;
+    }
+    .ant-upload-hint {
+      font-size: 12px !important;
+    }
+  }
+  .ant-upload-list {
+    .ant-upload-list-item {
+      color: @text-color-secondary;
+      .ant-upload-list-item-actions {
+        .anticon {
+          color: @text-color-secondary;
+        }
+        &:hover .anticon {
+          color: @text-color-main;
+        }
+      }
+    }
   }
 }
