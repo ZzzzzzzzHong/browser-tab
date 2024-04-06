@@ -83,7 +83,7 @@ export default {
       list: [], // 文件列表
       currentFileData: '' // 当前文件配置
     })
-    const handleBeforeUpload = (f, fList) => {
+    const handleBeforeUpload = f => {
       const reader = new FileReader()
       reader.readAsText(f, 'utf-8')
       reader.onload = function (e) {
@@ -135,7 +135,7 @@ export default {
           height: 150px;
           .save {
             display: flex;
-            justify-content: end;
+            justify-content: flex-end;
             .ant-btn {
               padding: 0px;
             }
