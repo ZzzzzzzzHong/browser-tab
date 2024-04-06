@@ -1,4 +1,4 @@
-# browsertab
+# browser-tab
 
 ## Project setup
 
